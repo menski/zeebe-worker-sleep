@@ -32,7 +32,7 @@ public class SleepWorker {
   }
 
   private void run() {
-    LOG.info("Starting job worker with config: {}", config);
+    LOG.info("Starting job worker with config: {}", config.root().render());
     ZeebeClient client = createZeebeClient();
     createWorker(client).open();
   }

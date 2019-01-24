@@ -8,6 +8,6 @@ FROM openjdk:8-jre-alpine
 
 USER nobody
 
-CMD ["java", "${JAVA_OPTS}", "-jar", "zeebe-worker-sleep.jar"]
+CMD ["sh", "-c", "java ${JAVA_OPTS} -jar zeebe-worker-sleep.jar"]
 
 COPY --from=builder /src/target/zeebe-worker-sleep-*.jar /zeebe-worker-sleep.jar
